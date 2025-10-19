@@ -13,8 +13,8 @@ class Dog {
 
   // Methods (functionality)
   void move() {
-    x += speedX;
-    y += speedY;
+    // x += speedX;
+    // y += speedY;
 
     // Bounce off edges (accounting for dog size - body is about 80 wide, 60 tall)
     if (x > width - 40 || x < 40) {
@@ -78,4 +78,13 @@ void draw() {
   image(backgroundImg, 0, 0, width, height);  // Display background image
   myDog.move();
   myDog.display();
+}
+
+void keyPressed() {
+   if (keyCode == LEFT) {
+      myDog.x -= 5;  // Move left
+   }
+   if (keyCode == RIGHT) {
+      myDog.x += 5;  // Move right
+   }
 }
